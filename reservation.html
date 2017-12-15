@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="all" />
+	<link type="text/css" rel="stylesheet" href="css/styleManoir.css" />
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta charset="UTF-8"/>
+	
+	<title>Réservation</title>
+</head>
+
+<body>
+	<!--Bandeau haut de page-->
+	<div class="backgroundImg"></div>
+
+	<!--barre de menu-->
+    <nav class="yellow darken-3" id="nav">
+        <div class="nav-wrapper">
+        	<!-- menu burger pour portable -->
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+            	<i class="material-icons menuPage">menu</i>
+            </a>
+            <!-- navigation sur le site -->
+            <ul class="left hide-on-med-and-down">
+                <li><a href="index.html" class=" active menuSite">Manoir</a></li>
+                <li><a href="normandie.html" class="menuSite">Normandie</a></li>
+                <li class="active"><a href="reservation.html" class="menuSite">Réservation</a></li>
+            </ul>
+            <!-- navigation dans la page -->
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#coordonnees" class="menuPage">Coordonnées</a></li>
+                <li><a href="#options" class="menuPage">Options</a></li>
+                <li><a href="#sejour" class="menuPage">Séjour</a></li>
+            </ul>
+            <!-- navigation sur portables -->
+            <ul class="side-nav yellow darken-3" id="mobile-demo">
+                <li><a href="index.html" class="menuSite">Manoir</a></li>
+                <li><a href="normandie.html" class="menuSite">Normandie</a></li>
+                <li class="active"><a href="reservation.html" class="menuSite">Réservation</a></li>
+                <li><a href="#exterieur" class="menuPage">Extérieur</a></li>
+                <li><a href="#interieur" class="menuPage">Intérieur</a></li>
+                <li><a href="#annexes" class="menuPage">Annexes</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+	<!--Titre de la page-->
+    <header class="center">
+    	<div class="card-panel teal z-depth-3">
+    		<h1>Réservez vite votre séjour!</h1>
+    	</div>
+            <p class="header_text">Profitez de nos offres exceptionnelles</p>
+    </header>
+
+	<!--panneau des coordonnees-->
+	<form action="Gestion" method="post">
+		<article class="card-panel teal z-depth-3" id="coordonnees">
+			<h2>Coordonnées</h2>
+			<div class="row">
+				<!-- formulaire: champ prénom -->
+				<div class="input-field col s12 l6">
+					<i class="material-icons prefix">person</i>
+					<input id="prenom" type="text" name="prenom" class="validate couleurFormulaire" required> <label for="prenom">Prénom</label>
+				</div>
+				<!-- formulaire: champ nom -->
+				<div class="input-field col s12 l6">
+					<i class="material-icons prefix">person</i>
+					<input id="last_name" type="text" name="nom" class="validate couleurFormulaire" required>
+					<label for="nom">Nom</label>
+				</div>
+				<!-- formulaire: champ numéro de téléphone -->
+				<div class="input-field col s12 l6">
+					<i class="material-icons prefix">phone</i>
+					<input id="telephone" type="tel" name="telephone" class="validate couleurFormulaire" required>
+					<label for="telephone">Téléphone</label>
+				</div>
+				<!--  formulaire: champ email-->
+				<div class="input-field col s126">
+					<i class="material-icons prefix">email</i>
+					<input id="email" type="email" name="email" class="validate couleurFormulaire">
+					<label for="email">Email</label>
+				</div>
+				<!-- formulaire: menu déroulant des régions-->
+				<div class="input-field col s12 l6 offset-l3">
+					<select class="couleurFormulaire" name="region">
+						<option value="" disabled selected>Choisissez votre région</option>
+						<option value="Auvergne-Rhöne-Alpes">Auvergne-Rhône-Alpes</option>
+						<option value="Bourgogne-Franche-Comté">Bourgogne-Franche-Comté</option>
+						<option value="Bretagne">Bretagne</option>
+						<option value="Cantre-Val de Loire">Centre-Val de Loire</option>
+						<option value="Corse">Corse</option>
+						<option value="Grand Est">Grand Est</option>
+						<option value="Gaudeloupe">Guadeloupe</option>
+						<option value="Guyane">Guyane</option>
+						<option value="Hauts-de-France">Hauts-de-France</option>
+						<option value="Île-de-France">Île-de-France</option>
+						<option value="La Réunion">La Rénunion</option>
+						<option value="Martinique">Martinique</option>
+						<option value="Mayotte">Mayotte</option>
+						<option value="Normandie">Normandie</option>
+						<option value="Nouvelle-Aquitaine">Nouvelle-Aquitaine</option>
+						<option value="Occitanie">Occitanie</option>
+						<option value="Pays de la Loire">Pays de la Loire</option>
+						<option value="Provence-Alpes-Côte d'Azur">Provence-Alpes-Côte d'Azur</option>
+					</select>
+				 	<label>Région</label>
+				</div>
+			</div>
+		</article>
+
+		<!--panneau des options -->
+		<article class="card-panel teal z-depth-3" id="options">
+			<h2>Options</h2>
+			<div class="form row">
+				<!--  checkbox: parkiung -->
+				<p class="col s12 m6">
+					<i class="material-icons prefix">local_parking</i>
+					<input class="checkbox-yellow" type="checkbox" id="parking" name="parking" />
+					<label for="parking">Parking</label>
+				</p>
+				<!--  checkbox: animal -->
+				<p class="col s12 m6">
+					<i class="material-icons prefix">pets</i>
+					<input class="checkbox-yellow" type="checkbox" id="animal" name="animal" />
+					<label for="animal">Animal</label>
+				</p>
+				<!--  boutons radio: fumeur/non-fumeur -->
+				<!--  bouton non-fumeur -->
+				<p class="col s12 m6">
+					<i class="material-icons prefix">smoke_free</i>
+					<input class="radio-yellow with-gap" name="fumeur" type="radio" value="non-fumeur" id="non-fumeur" />
+					<label for="non-fumeur">Non Fumeur</label>
+				</p>
+				<!--  bouton fumeur -->
+				<p class="col s12 m6">
+					<i class="material-icons prefix">smoking_rooms</i>
+					<input class="radio-yellow with-gap" name="fumeur" type="radio" value="fumeur" id="fumeur" />
+					<label for="fumeur">Fumeur</label>
+				</p>
+			</div>
+		</article>
+
+		<article class="card-panel teal z-depth-3" id="sejour">
+			<h2>Séjour</h2>
+			<div class="form row">
+				<!--  formulaire: champ nombre de personnes -->
+				<select class="col s12 l4 couleurFormulaire" name="nbrePersonnes" required>
+						<option value="" disabled selected>0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				 	<label>Nombre de personnes</label>
+				<!-- formulaire: champ date d'arrivée -->
+				<div class="input-field col s6 l4">
+					<input id="Date arrivee" type="text" class="datepicker" name="jourArrivee">
+        			<label for="dateArrivee">Date d'arrivée</label>
+				</div>
+				<!--  formulaire: nombre de nuitées -->
+				<div class="input-field col s6 l4">
+					<input id="nuitees" type="text" name="nuitees" class="validate couleurFormulaire" required>
+					<label for="nuitees">Nombre de nuitées</label>
+				</div>
+			</div>
+		</article>
+	
+		<!--  bouton de validation du formulaire -->
+		<button class="btn waves-effect waves-light" type="submit" name="action"> Submit
+			<i class="material-icons right">send</i>
+		</button>
+
+	</form>
+	
+	<!--bouton de retour au menu -->
+	<div class="fixed-action-btn">
+		<a class=" btn-floating btn-large waves-effect waves-light z-depth-5 yellow darken-3" href="#nav">
+			<i class="material-icons menuPage">home</i>
+		</a>
+	</div>
+
+
+	<!--Import jQuery before materialize.js-->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".button-collapse").sideNav();
+			$('select').material_select();
+			$('.datepicker').pickadate({
+				selectMonths: true, // Creates a dropdown to control month
+			    selectYears: 15, // Creates a dropdown of 15 years to control year,
+			    format: 'dd/mm/yy', // choix du format de date ernvoyé
+			    today: 'Today',
+			    clear: 'Clear',
+			    close: 'Ok',
+			    closeOnSelect: false // Close upon selecting a date,
+			  });    
+		})
+	</script>
+	
+</body>
+
+</html>
